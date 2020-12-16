@@ -36,10 +36,14 @@ export default class GameScene extends Phaser.Scene {
      backgroundImage.setScale(2, 0.8);
      const map = this.make.tilemap({ key: 'map' });
      const tileset = map.addTilesetImage('kenney_simple_platformer', 'tiles');
-     const platforms = map.createStaticLayer('Platforms', tileset, 0, 200);
-     
+     const platforms = this.physics.add.staticGroup();
+     platforms.create(225, 490, 'platformLand').setScale(1, .3).refreshBody();
+    
+
      this.player = this.physics.add.sprite(50, 300, 'player');
      this.player.setBounce(0.1);
+     this.cameras.main.setBounds(0, 0, 2000, 600);
+     this.cameras.main.startFollow(this.player, true, 0.5, 0.5);
      this.player.setCollideWorldBounds(true);
      this.physics.add.collider(this.player, platforms);
      
@@ -64,6 +68,61 @@ export default class GameScene extends Phaser.Scene {
         frameRate: 10,
       });
       this.cursors = this.input.keyboard.createCursorKeys();
+      
+      
+    
+     
+  }
+  
+  update(){
+      // Control the player with left or right keys
+if (this.cursors.left.isDown) {
+    this.player.setVelocityX(-200);
+    if (this.player.body.onFloor()) {
+      this.player.play('walk', true);
+    }
+  } else if (this.cursors.right.isDown) {
+    this.player.setVelocityX(200);
+    if (this.player.body.onFloor()) {
+      this.player.play('walk', true);
+    }
+  } else {
+    // If no keys are pressed, the player keeps still
+    this.player.setVelocityX(0);
+    // Only show the idle animation if the player is footed
+    // If this is not included, the player would look idle while jumping
+    if (this.player.body.onFloor()) {
+      this.player.play('idle', true);
+    }
+  }
+  
+  // Player can jump while walking any direction by pressing the space bar
+  // or the 'UP' arrow
+  if ((this.cursors.space.isDown || this.cursors.up.isDown) && this.player.body.onFloor()) {
+    this.player.setVelocityY(-150);
+    this.player.play('jump', true);
+  }
+  
+  if (this.player.body.velocity.x > 0) {
+    this.player.setFlipX(false);
+  } else if (this.player.body.velocity.x < 0) {
+    // otherwise, make them face the other side
+    this.player.setFlipX(true);
+  }
+  }
+   playerHit(player, spike) {
+    player.setVelocity(0, 0);
+    player.setX(50);
+    player.setY(300);
+    player.play('idle', true);
+    player.setAlpha(0);
+    let tw = this.tweens.add({
+      targets: player,
+      alpha: 1,
+      duration: 100,
+      ease: 'Linear',
+      repeat: 5,
+    });
   }
   
     
