@@ -42,6 +42,28 @@ export default class GameScene extends Phaser.Scene {
      this.player.setBounce(0.1);
      this.player.setCollideWorldBounds(true);
      this.physics.add.collider(this.player, platforms);
+     
+     this.anims.create({
+        key: 'walk',
+        frames: this.anims.generateFrameNames('player', {
+          prefix: 'robo_player_',
+          start: 2,
+          end: 3,
+        }),
+        frameRate: 10,
+        repeat: -1
+      });
+      this.anims.create({
+        key: 'idle',
+        frames: [{ key: 'player', frame: 'robo_player_0' }],
+        frameRate: 10,
+      });
+      this.anims.create({
+        key: 'jump',
+        frames: [{ key: 'player', frame: 'robo_player_1' }],
+        frameRate: 10,
+      });
+      this.cursors = this.input.keyboard.createCursorKeys();
   }
   
     
