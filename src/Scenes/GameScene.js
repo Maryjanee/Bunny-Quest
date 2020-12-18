@@ -18,9 +18,10 @@ export default class GameScene extends Phaser.Scene {
  
   create () {
     const map = this.createMap();
-    const layers = this.createPlatforms(map);
-     this.createPlayer()
+    const layers = this.createLayers(map);
+    const player = this.createPlayer()
   //  map.createStaticLayer('environment', tileset1);
+    this.physics.add.collider(player, layers.platformsColliders);
  
 
   }
@@ -29,15 +30,19 @@ export default class GameScene extends Phaser.Scene {
     map.addTilesetImage('main_lev_build_1', 'tiles-1')
     return map;
   }
-  createPlatforms(map){
-    const tileSet =  map.getTileset('main_lev_build_1')
-    const platforms = map.createStaticLayer('platforms', tileSet);
-    return platforms
+  createLayers(map){
+    const tileSet =  map.getTileset('main_lev_build_1');
+    const platformsColliders = map.createStaticLayer('platforms_colliders', tileSet);
+    const platforms = map.createStaticLayer('platforms', tileSet)
+
+    platformsColliders.setCollisionByExclusion(-1, true);
+    return {platforms, platformsColliders}
   }
   createPlayer(){
     const player = this.physics.add.sprite(100, 230, 'sparky')
     player.setGravityY(500);
     player.setCollideWorldBounds(true)
+    return player;
   }
  
     
