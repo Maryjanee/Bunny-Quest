@@ -24,5 +24,7 @@ class Game extends Phaser.Game {
 }
  
 window.game = new Game();
-// window.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+// window.focus();
+// resize();
+// window.addEventListener("resize", resize, false);
 

@@ -3,7 +3,7 @@ import 'phaser';
  
 export default {
   type: Phaser.AUTO,
-  width: 800,
+  width: 1280,
   height: 600,
   backgroundColor: "#a0a0dd",
   physics: {
@@ -19,14 +19,3 @@ export default {
   
 };
 
-function randomNumGen() {
-  return Math.round((Math.random() *( Math.abs(9 - 4))) + 4);
-}
-
- function levelSetup() {
-   let platFormArr = [];
-   for(let i = 0; i < 1000; i++){
-platFormArr.push(randomNumGen())
-}
-return platFormArr;
-}
