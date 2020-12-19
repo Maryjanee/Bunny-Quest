@@ -19,11 +19,24 @@ export default class GameScene extends Phaser.Scene {
   create () {
     const map = this.createMap();
     const layers = this.createLayers(map);
-    const player = this.createPlayer()
+    this.player = this.createPlayer()
   //  map.createStaticLayer('environment', tileset1);
-    this.physics.add.collider(player, layers.platformsColliders);
+    this.physics.add.collider(this.player, layers.platformsColliders);
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.playerSpeed = 200;
+
  
 
+  }
+  update() {
+    const {left, right} = this.cursors;
+    if(left.isDown){
+      this.player.setVelocityX(-this.playerSpeed)
+    }else if(right.isDown){
+      this.player.setVelocityX(this.playerSpeed)
+    }else{
+      this.player.setVelocityX(0)
+    }
   }
   createMap(){
     const map = this.make.tilemap({key: 'map'});
@@ -35,7 +48,7 @@ export default class GameScene extends Phaser.Scene {
     const platformsColliders = map.createStaticLayer('platforms_colliders', tileSet);
     const platforms = map.createStaticLayer('platforms', tileSet)
 
-    platformsColliders.setCollisionByExclusion(-1, true);
+    platformsColliders.setCollisionByProperty({collides:true});
     return {platforms, platformsColliders}
   }
   createPlayer(){
