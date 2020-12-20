@@ -1,7 +1,8 @@
 
 import 'phaser';
+import Player from './Player'
 
- 
+ console.log(Player)
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
@@ -24,6 +25,7 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.player, layers.platformsColliders);
     this.cursors = this.input.keyboard.createCursorKeys();
     this.playerSpeed = 200;
+    
 
  
 
@@ -52,7 +54,7 @@ export default class GameScene extends Phaser.Scene {
     return {platforms, platformsColliders}
   }
   createPlayer(){
-    const player = this.physics.add.sprite(100, 230, 'sparky')
+     const player = new Player (this, 100, 230)
     player.setGravityY(500);
     player.setCollideWorldBounds(true)
     return player;
