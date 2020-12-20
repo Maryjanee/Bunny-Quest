@@ -30,16 +30,7 @@ export default class GameScene extends Phaser.Scene {
  
 
   }
-  update() {
-    const {left, right} = this.cursors;
-    if(left.isDown){
-      this.player.setVelocityX(-this.playerSpeed)
-    }else if(right.isDown){
-      this.player.setVelocityX(this.playerSpeed)
-    }else{
-      this.player.setVelocityX(0)
-    }
-  }
+ 
   createMap(){
     const map = this.make.tilemap({key: 'map'});
     map.addTilesetImage('main_lev_build_1', 'tiles-1')
@@ -54,10 +45,9 @@ export default class GameScene extends Phaser.Scene {
     return {platforms, platformsColliders}
   }
   createPlayer(){
-     const player = new Player (this, 100, 230)
-    player.setGravityY(500);
-    player.setCollideWorldBounds(true)
-    return player;
+    return new Player (this, 100, 230)
+   
+  
   }
  
     
