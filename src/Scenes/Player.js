@@ -9,6 +9,8 @@ import animation from './playeranims'
     scene.physics.add.existing(this);
     this.gravity = 500;
     this.playerSpeed = 200;
+    this.noOfJumps = 0;
+    
     this.body.setGravityY(this.gravity);
     this.setCollideWorldBounds(true)
     this.cursors = this.scene.input.keyboard.createCursorKeys();
@@ -18,7 +20,10 @@ import animation from './playeranims'
   
   preUpdate(){
     const {left, right, space, up} = this.cursors;
-    const onFloor = this.body.onFloor()
+    const spaceKeyPressed = Phaser.Input.Keyboard.JustDown(space);
+    
+    const onFloor = this.body.onFloor();
+    
     if(left.isDown){
       this.setVelocityX(-this.playerSpeed);
       this.setFlipX(true)
@@ -28,9 +33,16 @@ import animation from './playeranims'
     }else{
       this.setVelocityX(0)
     }
-    if((space.isDown || up.isDown) && onFloor ){
-      this.setVelocityY(-this.playerSpeed * 1.6)
+    if((spaceKeyPressed) && (onFloor || this.noOfJumps < 2)){
+      this.setVelocityY(-this.playerSpeed * 1.8);
+      this.noOfJumps++
+      console.log(this.noOfJumps)
     }
+    if (onFloor  && !spaceKeyPressed){
+      this.noOfJumps = 0
+
+    }
+    
     
      this.body.velocity.x !== 0 ? this.anims.play('run', true): this.anims.play('idle', true)
   }
