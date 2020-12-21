@@ -17,7 +17,8 @@ import animation from './playeranims'
   }
   
   preUpdate(){
-    const {left, right} = this.cursors;
+    const {left, right, space, up} = this.cursors;
+    const onFloor = this.body.onFloor()
     if(left.isDown){
       this.setVelocityX(-this.playerSpeed);
       this.setFlipX(true)
@@ -27,6 +28,10 @@ import animation from './playeranims'
     }else{
       this.setVelocityX(0)
     }
+    if((space.isDown || up.isDown) && onFloor ){
+      this.setVelocityY(-this.playerSpeed * 1.6)
+    }
+    
      this.body.velocity.x !== 0 ? this.anims.play('run', true): this.anims.play('idle', true)
   }
 
