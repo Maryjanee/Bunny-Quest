@@ -19,13 +19,15 @@ import animation from './playeranims'
   preUpdate(){
     const {left, right} = this.cursors;
     if(left.isDown){
-      this.setVelocityX(-this.playerSpeed)
+      this.setVelocityX(-this.playerSpeed);
+      this.setFlipX(true)
     }else if(right.isDown){
       this.setVelocityX(this.playerSpeed)
+      this.setFlipX(false)
     }else{
       this.setVelocityX(0)
     }
-    this.anims.play('idle', true)
+     this.body.velocity.x !== 0 ? this.anims.play('run', true): this.anims.play('idle', true)
   }
 
   
