@@ -36,15 +36,15 @@ import animation from './playeranims'
     if((spaceKeyPressed) && (onFloor || this.noOfJumps < 2)){
       this.setVelocityY(-this.playerSpeed * 1.8);
       this.noOfJumps++
-      console.log(this.noOfJumps)
     }
-    if (onFloor  && !spaceKeyPressed){
+    if (onFloor){
       this.noOfJumps = 0
 
     }
     
     
-     this.body.velocity.x !== 0 ? this.anims.play('run', true): this.anims.play('idle', true)
+     onFloor?
+     this.body.velocity.x !== 0 ? this.anims.play('run', true): this.anims.play('idle', true): this.anims.play('jump', true)
   }
 
   
