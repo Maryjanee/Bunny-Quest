@@ -24,6 +24,7 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.createPlayer()
   //  map.createStaticLayer('environment', tileset1);
     this.physics.add.collider(this.player, layers.platformsColliders);
+    this.setUpCameras(this.player);
   }
  
   createMap(){
@@ -41,6 +42,11 @@ export default class GameScene extends Phaser.Scene {
   }
   createPlayer(){
     return new Player (this, 100, 230)
+  }
+  setUpCameras(player){
+    this.physics.world.setBounds(0,0,this.width + 1600, 8GIT 00)
+    this.cameras.main.setBounds(0,0, this.width + 1600, 600).setZoom(1.5);
+    this.cameras.main.startFollow(player)
   }
  
     

@@ -33,7 +33,7 @@ import animation from './playeranims'
     }else{
       this.setVelocityX(0)
     }
-    if((spaceKeyPressed) && (onFloor || this.noOfJumps < 2)){
+    if((spaceKeyPressed) && (onFloor || this.noOfJumps < 1)){
       this.setVelocityY(-this.playerSpeed * 1.8);
       this.noOfJumps++
     }

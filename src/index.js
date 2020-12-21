@@ -24,7 +24,5 @@ class Game extends Phaser.Game {
 }
  
 window.game = new Game();
-// window.focus();
-// resize();
-// window.addEventListener("resize", resize, false);
+
 
