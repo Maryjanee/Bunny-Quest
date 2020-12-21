@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import animation from './playeranims'
 
 
  class Player extends Phaser.Physics.Arcade.Sprite{
@@ -12,6 +13,7 @@ import Phaser from 'phaser';
     this.setCollideWorldBounds(true)
     this.cursors = this.scene.input.keyboard.createCursorKeys();
     
+    animation(this.scene.anims)
   }
   
   preUpdate(){
@@ -23,7 +25,9 @@ import Phaser from 'phaser';
     }else{
       this.setVelocityX(0)
     }
+    this.anims.play('idle', true)
   }
+
   
 }
 

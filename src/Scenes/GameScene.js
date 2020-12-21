@@ -12,7 +12,8 @@ export default class GameScene extends Phaser.Scene {
   this.load.tilemapTiledJSON('map', 'src/assets/crystal_world_map.json');
   this.load.image('tiles-1', 'src/assets/main_lev_build_1.png');
   this.load.image('tiles-2', 'src/assets/main_lev_build_2.png');
-  this.load.image('sparky', 'src/assets/player/movements/idle01.png');
+  // this.load.image('sparky', 'src/assets/player/movements/idle01.png');
+  this.load.spritesheet('sparky', 'src/assets/player/move_sprite_1.png', {frameWidth:32, spacing:32, frameHeight:38});
     
   }
 
@@ -23,12 +24,6 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.createPlayer()
   //  map.createStaticLayer('environment', tileset1);
     this.physics.add.collider(this.player, layers.platformsColliders);
-    this.cursors = this.input.keyboard.createCursorKeys();
-    this.playerSpeed = 200;
-    
-
- 
-
   }
  
   createMap(){
@@ -46,8 +41,6 @@ export default class GameScene extends Phaser.Scene {
   }
   createPlayer(){
     return new Player (this, 100, 230)
-   
-  
   }
  
     
