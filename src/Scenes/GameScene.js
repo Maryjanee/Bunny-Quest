@@ -27,6 +27,7 @@ export default class GameScene extends Phaser.Scene {
   
     this.physics.add.collider(this.player, layers.platformsColliders);
     this.physics.add.collider(this.enemy, layers.platformsColliders);
+    this.physics.add.collider(this.player, this.enemy);
     this.setUpCameras(this.player);
   
 
@@ -53,10 +54,7 @@ export default class GameScene extends Phaser.Scene {
       return new Enemy(this, 200, 200);
     }
   
-    // createEnemyColliders(enemy, { colliders }) {
-    //   enemy
-    //     .addCollider(colliders.platformsColliders)
-    // }
+    
     
   setUpCameras(player){
     this.physics.world.setBounds(0,0,this.width + 1600, 800)
