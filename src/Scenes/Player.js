@@ -14,6 +14,7 @@ import animation from './playeranims'
     this.body.setGravityY(this.gravity);
     this.setCollideWorldBounds(true)
     this.cursors = this.scene.input.keyboard.createCursorKeys();
+    this.setOrigin(0.5, 1);
     
     animation(this.scene.anims)
   }
