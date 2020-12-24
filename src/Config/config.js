@@ -3,19 +3,16 @@ import 'phaser';
  
 export default {
   type: Phaser.AUTO,
-  width: 1400,
+  parent: 'phaser-example',
+  backgroundColor:0x234728,
+  width: 800,
   height: 600,
-  backgroundColor: "#a0a0dd",
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 200 },
-      enableBody: true,
+        gravity: { y: 300 },
+        debug: false
     }
-  },  scale: {
-
-    autoCenter: Phaser.Scale.CENTER_BOTH
   }
-  
 };
 
