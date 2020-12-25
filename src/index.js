@@ -9,6 +9,11 @@ import TitleScene from './Scenes/TitleScene';
 import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import Model from './Model';
+
+
+
+
+
 class Game extends Phaser.Game {
   constructor () {
     super(config);
@@ -21,10 +26,18 @@ class Game extends Phaser.Game {
     this.scene.add('Credits', CreditsScene);
     this.scene.add('Game', GameScene);
     this.scene.add('GameOver', GameOverScene);
-    this.scene.start('Boot');
+    this.scene.start('Boot' )
   }
 }
+
+    window.game = new Game();
+//   }
+//   else{
+//     form.style.display ='none'
+//     console.log('no val entered');
+//   }
+// })
  
-window.game = new Game();
+
 
 
