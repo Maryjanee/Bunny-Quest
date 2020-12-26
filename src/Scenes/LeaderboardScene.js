@@ -16,19 +16,36 @@ export default class LeaderboardScene extends Phaser.Scene {
     
 }
 
-returnTopGamers(){
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores/'
-)
-.then(response => response.json())
-.then(data => {
-  console.log('Success:', data);
-})
-.catch((error) => {
-  console.log('Error:', error);
-});
-}
 
+
+  returnTopGamers(){
+      fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores/'
+    )
+    .then(response => response.json())
+    .then(data => {
+      const allUsers = data.result
+      const topTen = allUsers.sort((a,b) => b-a).slice(0,10);
+      console.log(topTen)
+
+    })
+    .catch((error) => {
+      console.log('Error:', error);
+    });
+  }
   
- 
-  
+  createLeaderBoardTable(obj){
+    const table = document.createElement('table');
+    const tableHeadings = document.createElement('tr');
+    const name = document.createElement('th');
+    name.innerText = 'Username';
+    const score = document.createElement('th');
+    score.innerText = 'Score';
+    tableHeadings.appendChild(name);
+    tableHeadings.appendChild(score);
+    table.appendChild(tableHeadings)
+    console.log(table);
+    
+  }
+
+
 };
