@@ -36,15 +36,22 @@ export default class LeaderboardScene extends Phaser.Scene {
   createLeaderBoardTable(obj){
     const table = document.createElement('table');
     const tableHeadings = document.createElement('tr');
-    const name = document.createElement('th');
-    name.innerText = 'Username';
-    const score = document.createElement('th');
-    score.innerText = 'Score';
-    tableHeadings.appendChild(name);
-    tableHeadings.appendChild(score);
-    table.appendChild(tableHeadings)
-    console.log(table);
-    
+    tableHeadings.innerHTML = `<th>Rank</th>
+                               <th>Username</th>
+                               <th>Score</th>`;
+                              
+    table.appendChild(tableHeadings);  
+      
+    obj.forEach((user, index) =>{
+      const row = document.createElement('tr');
+      row.innerHTML = `<th>${index + 1}</th>
+      <th>${user.name}</th>
+                       <th>${user.score}</th>`;
+      table.appendChild(row);                 
+      });
+      
+      return table;
+      
   }
 
 
