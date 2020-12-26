@@ -9,7 +9,7 @@ export default class GameOverScene extends Phaser.Scene {
   }
   
   init (carrotsCollected){
-   this.carrotsCollectedCount = carrotsCollected.score;
+   this.carrotsCollectedCount = carrotsCollected.score.toString();
 }
 
   create () {
@@ -22,7 +22,7 @@ export default class GameOverScene extends Phaser.Scene {
         if(this.input !== ""){
           
     this.add.text( 150, 250, `GameOver ${this.input} , Your score is ${this.carrotsCollectedCount}`, {fill: '#000000', fontSize: '20px'})
-    console.log(typeof this.carrotsCollectedCount)
+    console.log(typeof this.carrotsCollectedCount, this.carrotsCollectedCount)
     
    this.sendDataToApi(this.input, this.carrotsCollectedCount)
     

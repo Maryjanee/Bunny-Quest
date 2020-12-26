@@ -54,8 +54,7 @@ export default class GameScene extends Phaser.Scene {
       this.player.body.checkCollision.left = false
       this.player.body.checkCollision.right = false
       
-      this.cameras.main.startFollow(this.player);
-      this.cameras.main.startFollow(this.player) 
+      this.cameras.main.startFollow(this.player)
       this.cameras.main.setDeadzone(this.scale.width * 1.5);
       
       this.carrots = this.physics.add.group({
@@ -109,7 +108,8 @@ export default class GameScene extends Phaser.Scene {
     
     const bottomPlatform = this.findBottomMostPlatform()
       if (this.player.y > bottomPlatform.y + 200){
-        this.scene.start('GameOver', { score:  this.carrotsCollected - 1 });
+        this.scene.start('GameOver', { score:  this.carrotsCollected - 1  });
+      
     }
  }
  
