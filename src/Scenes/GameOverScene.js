@@ -18,22 +18,40 @@ export default class GameOverScene extends Phaser.Scene {
    
       form.addEventListener('submit', (e)=>{
         e.preventDefault();
-        const input = document.querySelector('#user-input').value;
-        if(input !== ""){
+        this.input = document.querySelector('#user-input').value;
+        if(this.input !== ""){
           
-    this.add.text( 150, 250, `GameOver ${input} , Your score is ${this.carrotsCollectedCount - 1}`, {fill: '#000000', fontSize: '20px'})
-		this.input.on('pointerdown', () => {
-			this.scene.stop('GameOver')
-			this.scene.start('GameScene')
-    })
-    this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Play Again', 'Game');
+    this.add.text( 150, 250, `GameOver ${this.input} , Your score is ${this.carrotsCollectedCount}`, {fill: '#000000', fontSize: '20px'})
+    
+    console.log(this.sendDataToApi(this.input, this.carrotsCollectedCount))
+    
+    this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Score Board', 'Leaderboard');
   }
-  else if(typeof input == "number" || input == "")
+  else if(typeof this.input == "number" || this.input == "")
   
   this.add.text( 150, 250,"Please enter a valid name")
 })
 } 
   
+sendDataToApi(name, score){
+  const data = {name:"Bunny Quest", user: name, 
+score:score };
+
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+}
  
   
 };
