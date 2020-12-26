@@ -18,19 +18,23 @@ export default class LeaderboardScene extends Phaser.Scene {
 
 
 
-  returnTopGamers(){
+  retrieveUsers(){
       fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores/'
     )
     .then(response => response.json())
     .then(data => {
       const allUsers = data.result
-      const topTen = allUsers.sort((a,b) => b-a).slice(0,10);
-      console.log(topTen)
-
+      const topUsers = this.sortTopTenGamers(allUsers);
+      this.createLeaderBoardTable(topUsers)
     })
     .catch((error) => {
       console.log('Error:', error);
     });
+  }
+  
+  sortTopTenGamers(arr){
+   return arr.sort((a,b) => b-a).slice(0,10);
+    
   }
   
   createLeaderBoardTable(obj){
@@ -53,6 +57,7 @@ export default class LeaderboardScene extends Phaser.Scene {
       return table;
       
   }
+  
 
 
 };
