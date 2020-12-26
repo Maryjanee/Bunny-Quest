@@ -22,8 +22,9 @@ export default class GameOverScene extends Phaser.Scene {
         if(this.input !== ""){
           
     this.add.text( 150, 250, `GameOver ${this.input} , Your score is ${this.carrotsCollectedCount}`, {fill: '#000000', fontSize: '20px'})
+    console.log(typeof this.carrotsCollectedCount)
     
-    console.log(this.sendDataToApi(this.input, this.carrotsCollectedCount))
+   this.sendDataToApi(this.input, this.carrotsCollectedCount)
     
     this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Score Board', 'Leaderboard');
   }
@@ -37,7 +38,7 @@ sendDataToApi(name, score){
   const data = {name:"Bunny Quest", user: name, 
 score:score };
 
-fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
