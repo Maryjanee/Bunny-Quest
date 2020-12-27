@@ -38,6 +38,7 @@ export default class LeaderboardScene extends Phaser.Scene {
     const table = document.createElement("table");
     const tableHeadings = document.createElement("tr");
     tableHeadings.innerHTML = `
+                                <th>Rank</th>
                                <th>Username</th>
                                <th>Score</th>`;
 
