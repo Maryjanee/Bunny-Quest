@@ -10,6 +10,7 @@ import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import LeaderboardScene from './Scenes/LeaderboardScene';
 import Model from './Model';
+import './main.scss';
 
 
 

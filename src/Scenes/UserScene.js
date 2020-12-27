@@ -13,7 +13,7 @@ export default class UserScene extends Phaser.Scene {
 			this.scene.stop('GameOver')
 			this.scene.start('GameScene')
     })
-    this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Play Again', 'Game');
+    
 	}
    
   

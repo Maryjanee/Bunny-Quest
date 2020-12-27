@@ -7,9 +7,16 @@ export default class LeaderboardScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(150, 250, "Leaderboard Page");
     this.retrieveUsers();
+    this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+     
   }
+  update(){
+    if(Phaser.Input.Keyboard.JustDown(this.spacebar)){
+      location.reload()
+    }
+  }
+
 
   retrieveUsers() {
     fetch(
@@ -36,20 +43,24 @@ export default class LeaderboardScene extends Phaser.Scene {
 
   createLeaderBoardTable(arr) {
     const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("thead");
     const tableHeadings = document.createElement("tr");
     tableHeadings.innerHTML = `
                                 <th>Rank</th>
                                <th>Username</th>
                                <th>Score</th>`;
-
-    table.appendChild(tableHeadings);
+    thead.appendChild(tableHeadings)
+    table.appendChild(thead);
 
     arr.forEach((user, index) => {
       const row = document.createElement("tr");
       row.innerHTML = `
+      <td>${index + 1}</td>
       <td>${user.user}</td>
                        <td>${user.score}</td>`;
-      table.appendChild(row);
+      tbody.appendChild(row);
+      table.appendChild(tbody);
     });
 
     document.querySelector('.results').appendChild(table);

@@ -5,9 +5,54 @@
   </head>
   <body>
     <style>
+      body{
+        position:relative
+      }
       form {
         display: none;
+        
       }
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table th,
+  table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.results{
+  position:absolute;
+  border:1px solid purple;
+  left:13rem;
+}
+
     </style>
     <form>
       <input type="text" id="user-input" />
@@ -16,68 +61,70 @@
     <div class="results">
       
     </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>UserName</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Maria</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Joseph</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Jored</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>seph</td>
-          <td>250</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>seph2</td>
-          <td>124</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>sephbaba</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>sephbaba</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>sephbaba</td>
-          <td>230</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>sewa</td>
-          <td>340</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Steve</td>
-          <td>420</td>
-        </tr>
-      </tbody>
-      
-    </table>
+<div class="results">
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>UserName</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Maria</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Joseph</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Jored</td>
+        <td>500</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>seph</td>
+        <td>250</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>seph2</td>
+        <td>124</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>sephbaba</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>sephbaba</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>sephbaba</td>
+        <td>230</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>sewa</td>
+        <td>340</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Steve</td>
+        <td>420</td>
+      </tr>
+    </tbody>
+    
+  </table>  -->
+</div>
+    
   </body>
 </html>
