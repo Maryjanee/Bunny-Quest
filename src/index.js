@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 
 import config from './Config/config';
 import GameScene from './Scenes/GameScene';
@@ -13,11 +13,8 @@ import Model from './Model';
 import './main.scss';
 
 
-
-
-
 class Game extends Phaser.Game {
-  constructor () {
+  constructor() {
     super(config);
     const model = new Model();
     this.globals = { model };
@@ -29,16 +26,12 @@ class Game extends Phaser.Game {
     this.scene.add('Game', GameScene);
     this.scene.add('GameOver', GameOverScene);
     this.scene.add('Leaderboard', LeaderboardScene);
-    this.scene.start('Boot' )
+    this.scene.start('Boot');
   }
 }
 
-    window.game = new Game();
+window.game = new Game();
 //   }
-// 
+//
 //   }
 // })
- 
-
-
-
