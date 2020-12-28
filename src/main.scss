@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+   $white:#fff;
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  position:relative;
+  
+  font-size:1rem;
+}
+
+form{
+ width:25%;
+ position:absolute;
+ top:15rem;
+ left:11rem;
+ display:none;
+ 
+}
+label{
+  display:block;
+  font-size: 1rem;
+  color:$white;
+  margin-bottom: 1rem;
+}
+
+ input{
+  padding:.9rem 1.4rem; 
+  display:block;
+  width:100%;
+  border-radius: .3rem;
+  border:0;
+  font-size: 1rem;
+  outline: none;
+  
+  
+ }
+
+
+
+table {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+min-width: 400px;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+background-color: #009879;
+color: #ffffff;
+text-align: left;
+font-weight: bold;
+}
+
+table th,
+table td {
+padding: 12px 15px;
+}
+
+table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+border-bottom: 2px solid #009879;
+}
+
+.results{
+position:absolute;
+border:1px solid purple;
+left:13rem;
+}
+
+#submit{
+  margin-left:1.3rem;
+  margin-top: .4rem;
+  background: #3DA7E1;
+  color:$white;
+}

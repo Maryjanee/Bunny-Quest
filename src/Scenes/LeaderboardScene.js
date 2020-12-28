@@ -8,6 +8,8 @@ export default class LeaderboardScene extends Phaser.Scene {
   create() {
     this.retrieveUsers();
     this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+    this.add.text(500, 600, 'Press Spacebar to reload Game', { fill: '#000000', fontSize: '20px' });
   }
 
   update() {

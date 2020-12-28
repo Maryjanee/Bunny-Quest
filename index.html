@@ -4,59 +4,12 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <style>
-      body{
-        position:relative
-      }
-      form {
-        display: none;
-        
-      }
-
-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
-}
-
-table th,
-  table td {
-  padding: 12px 15px;
-}
-
-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.results{
-  position:absolute;
-  border:1px solid purple;
-  left:13rem;
-}
-
-    </style>
     <form>
+      <label for="user-input">
+        Please Enter your name to Continue
+      </label>
       <input type="text" id="user-input" />
-      <input type="submit" value="Get Player name" />
+      <input type="submit" value="Submit" id="submit"/>
     </form>
     <div class="results">
       
