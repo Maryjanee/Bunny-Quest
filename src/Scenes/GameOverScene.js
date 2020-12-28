@@ -25,7 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
 
         this.sendDataToApi(this.input, this.carrotsCollectedCount);
 
-        this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Score Board', 'Leaderboard');
+        this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Top Players', 'Leaderboard');
       } else if (typeof this.input === 'number' || this.input === '') this.add.text(150, 250, 'Please enter a valid name');
     });
   }

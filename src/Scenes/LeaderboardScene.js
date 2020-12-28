@@ -43,10 +43,13 @@ export default class LeaderboardScene extends Phaser.Scene {
   }
 
   createLeaderBoardTable(arr) {
+    const results = document.querySelector('.results');
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     const tbody = document.createElement('thead');
     const tableHeadings = document.createElement('tr');
+    const message = document.createElement('p');
+    message.innerText = 'Press Spacebar to Reload Game'
     tableHeadings.innerHTML = `
                                 <th>Rank</th>
                                <th>Username</th>
@@ -64,6 +67,8 @@ export default class LeaderboardScene extends Phaser.Scene {
       table.appendChild(tbody);
     });
 
-    document.querySelector('.results').appendChild(table);
+    results.appendChild(table);
+    results.appendChild(message);
+    
   }
 }

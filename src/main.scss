@@ -9,6 +9,11 @@ body{
   
   font-size:1rem;
 }
+p{
+  margin:1.5rem auto;
+  color:$white;
+  font-size:1.3rem;
+}
 
 form{
  width:25%;
@@ -50,8 +55,8 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 table thead tr {
-background-color: #009879;
-color: #ffffff;
+background-color: #bf4aa8;
+color: $white;
 text-align: left;
 font-weight: bold;
 }
@@ -62,26 +67,25 @@ padding: 12px 15px;
 }
 
 table tbody tr {
-border-bottom: 1px solid #dddddd;
+border-bottom: 1px solid#BF4AA8;
 }
 
 table tbody tr:nth-of-type(even) {
-background-color: #f3f3f3;
+background-color: #BF4AA8;
 }
 
 table tbody tr:last-of-type {
-border-bottom: 2px solid #009879;
+border-bottom: 2px solid #bf4aa8;
 }
 
 .results{
 position:absolute;
-border:1px solid purple;
 left:13rem;
 }
 
 #submit{
   margin-left:1.3rem;
   margin-top: .4rem;
-  background: #3DA7E1;
+  background: #bf4aa8;
   color:$white;
 }
