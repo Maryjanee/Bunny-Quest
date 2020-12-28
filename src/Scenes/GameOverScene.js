@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
-import sendDataToApi from '../helpers/sendDataToApi'
+import sendDataToApi from '../helpers/sendDataToApi';
 
 
 export default class GameOverScene extends Phaser.Scene {
@@ -21,8 +21,7 @@ export default class GameOverScene extends Phaser.Scene {
       this.input = document.querySelector('#user-input').value;
       if (this.input !== '') {
         this.add.text(150, 250, `GameOver ${this.input} , Your score is ${this.carrotsCollectedCount}`, { fill: '#000000', fontSize: '20px' });
-        console.log(typeof this.carrotsCollectedCount, this.carrotsCollectedCount);
-        form.style.display = "none";
+        form.style.display = 'none';
 
         sendDataToApi(this.input, this.carrotsCollectedCount);
 
@@ -30,6 +29,4 @@ export default class GameOverScene extends Phaser.Scene {
       } else if (typeof this.input === 'number' || this.input === '') this.add.text(150, 250, 'Please enter a valid name');
     });
   }
-
-  
 }

@@ -1,5 +1,7 @@
+/* eslint-disable  no-restricted-globals */
 import Phaser from 'phaser';
-import retrieveUsers from '../helpers/retrieveUsers'
+import retrieveUsers from '../helpers/retrieveUsers';
+
 export default class LeaderboardScene extends Phaser.Scene {
   constructor() {
     super('Leaderboard');
@@ -17,5 +19,4 @@ export default class LeaderboardScene extends Phaser.Scene {
       location.reload();
     }
   }
-
 }

@@ -1,5 +1,6 @@
 import sortTopTenGamers from './sortTopGamers';
-import createLeaderBoardTable from './leaderBoardTable'
+import createLeaderBoardTable from './leaderBoardTable';
+
 export default function retrieveUsers() {
   fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores/',
@@ -10,7 +11,5 @@ export default function retrieveUsers() {
       const topUsers = sortTopTenGamers(allUsers);
       createLeaderBoardTable(topUsers);
     })
-    .catch((error) => {
-      return error
-    });
+    .catch((error) => error);
 }

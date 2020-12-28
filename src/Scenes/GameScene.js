@@ -1,11 +1,10 @@
-
+/* eslint-disable no-continue */
 import Phaser from 'phaser';
 import Carrot from '../Entities/Carrot';
 
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
-
     super('Game');
     this.noOfJumps = 0;
     this.gravity = 500;
@@ -37,7 +36,7 @@ export default class GameScene extends Phaser.Scene {
       const { body } = platform;
       body.updateFromGameObject();
     }
-  
+
     this.player = this.physics.add.sprite(240, 320, 'bunny').setScale(0.3);
     this.physics.add.collider(this.platforms, this.player);
     this.player.body.checkCollision.up = false;
@@ -59,7 +58,7 @@ export default class GameScene extends Phaser.Scene {
     this.carrotsCollectedText = this.add.text(240, 10, `Carrots: ${this.carrotsCollected}`, this.style).setScrollFactor(0).setOrigin(0.5, 0);
   }
 
-  update(t, dt) {
+  update() {
     this.platforms.children.iterate(child => {
       const platform = child;
       const { scrollY } = this.cameras.main;
@@ -87,7 +86,7 @@ export default class GameScene extends Phaser.Scene {
     }
     if ((spaceKeyPressed) && (touchingDown || this.noOfJumps < 1)) {
       this.player.setVelocityY(-150 * 1.8);
-      this.noOfJumps++;
+      this.noOfJumps += 1;
     }
     if (touchingDown) {
       this.noOfJumps = 0;
