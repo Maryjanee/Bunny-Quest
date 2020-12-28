@@ -5,8 +5,6 @@ import Carrot from '../Entities/Carrot';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
-    // carrots;
-    // platforms;
 
     super('Game');
     this.noOfJumps = 0;
@@ -39,9 +37,7 @@ export default class GameScene extends Phaser.Scene {
       const { body } = platform;
       body.updateFromGameObject();
     }
-    //  platforms.setAll('body.allowGravity', false);
-    //  platforms.setAll('body.immovable', true);
-    //  platforms.setAll('body.velocity.x', 100);
+  
     this.player = this.physics.add.sprite(240, 320, 'bunny').setScale(0.3);
     this.physics.add.collider(this.platforms, this.player);
     this.player.body.checkCollision.up = false;
