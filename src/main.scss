@@ -1,48 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
-   $white:#fff;
-   
-*{
+$white:#fff;
+
+* {
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  position:relative;
-  font-size:1rem;
+  position: relative;
+  font-size: 1rem;
 }
 
 p {
-  margin:1.5rem auto;
-  color:$white;
-  font-size:1.3rem;
+  margin: 1.5rem auto;
+  color: $white;
+  font-size: 1.3rem;
 }
 
 form {
-  width:25%;
-  position:absolute;
-  top:15rem;
-  left:11rem;
-  display:none; 
+  width: 25%;
+  position: absolute;
+  top: 15rem;
+  left: 11rem;
+  display: none;
 }
 
 label {
-  display:block;
+  display: block;
   font-size: 1rem;
-  color:$white;
+  color: $white;
   margin-bottom: 1rem;
 }
 
- input {
-  padding:.9rem 1.4rem; 
-  display:block;
-  width:100%;
-  border-radius: .3rem;
-  border:0;
+input {
+  padding: 0.9rem 1.4rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.3rem;
+  border: 0;
   font-size: 1rem;
   outline: none;
-
- }
-
-
+}
 
 table {
   border-collapse: collapse;
@@ -55,23 +52,23 @@ table {
 }
 
 table thead tr {
-background-color: #bf4aa8;
-color: $white;
-text-align: left;
-font-weight: bold;
+  background-color: #bf4aa8;
+  color: $white;
+  text-align: left;
+  font-weight: bold;
 }
 
 table th,
 table td {
-padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 table tbody tr {
-  border-bottom: 1px solid#BF4AA8;
+  border-bottom: 1px solid#bf4aa8;
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #BF4AA8;
+  background-color: #bf4aa8;
 }
 
 table tbody tr:last-of-type {
@@ -79,13 +76,13 @@ table tbody tr:last-of-type {
 }
 
 .results {
-  position:absolute;
-  left:13rem;
+  position: absolute;
+  left: 13rem;
 }
 
 #submit {
-  margin-left:1.3rem;
-  margin-top: .4rem;
-  background:#bf4aa8;
-  color:$white;
+  margin-left: 1.3rem;
+  margin-top: 0.4rem;
+  background: #bf4aa8;
+  color: $white;
 }
