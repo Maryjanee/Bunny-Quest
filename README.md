@@ -1,19 +1,18 @@
 # Bunny Quest
 > A Platform game made with the Phaser 3 framework
 
-The goal is for the bunny to grab as many carrots as possible without falling off the platform, the bunny is limited to two jumps per time.
+The goal is for the bunny to grab as many carrots as possible without falling off the platforms, the bunny is limited to two jumps per time.
 The platforms disappear as soon as it is no longer in sight, so making the right move is important.
 
-The game is over once the bunny fall off the platform.
+The game is over once the bunny falls off the platform.
 Scores increase by 10 once you grab a carrot.
 
 ## Screenshot
 
-![](./screenshots/screenshot-1.png)
-![](./screenshots/screenshot-2.png)
+![](src/assets/gamestart.png)
 
 
-## How to play the game?
+## Game Instructions
 
 - Move left with the  `left arrow`  key
 - Move right with the  `right arrow`  key
@@ -30,7 +29,7 @@ Scores increase by 10 once you grab a carrot.
 
 ## Live Demo
 
-- [Bunny Quest Live]()
+- [Bunny Quest Live](https://optimistic-ritchie-fde89a.netlify.app/)
 
 ## How to run this project on your local machine
 
