@@ -1,55 +1,82 @@
-# Phaser 3 Webpack Project Template
+# Bunny Quest
+> A Platform game made with the Phaser 3 framework
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+The goal is for the bunny to grab as many carrots as possible without falling off the platform, the bunny is limited to two jumps per time.
+The platforms disappear as soon as it is no longer in sight, so making the right move is important.
 
-Loading images via JavaScript module `import` is also supported.
+The game is over once the bunny fall off the platform.
+Scores increase by 10 once you grab a carrot.
 
-## Requirements
+## Screenshot
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
-
-## Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
-
-## Writing Code
-
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+![](./screenshots/screenshot-1.png)
+![](./screenshots/screenshot-2.png)
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+## How to play the game?
 
-## Customizing the Template
+- Move left with the  `left arrow`  key
+- Move right with the  `right arrow`  key
+- Jump with the  `Space`  key
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+## Built With
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+- Phaser 3
+- HTML
+- SCSS
+- Javascript
+- Webpack
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+## Live Demo
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+- [Bunny Quest Live]()
+
+## How to run this project on your local machine
+
+### Prerequisites
+- An internet browser
+- NPM
+- Phaser 3 
+
+   
+### Setup
+
+1. Clone this repository by using the Terminal to navigate to the desired location on your computer and then enter the following line of code into the Terminal:
+```
+git@github.com:Maryjanee/Bunny-Quest.git
+```
+2. Run `cd Bunny-Quest` to move inside the downloaded repository.
+
+3. The project contains a `package.json` file the manages its dependencies.Install them by running the command `npm install`.
+
+4. Run  `npm start` to view the project in a web browser.
+### Testing the game
+
+1. Run `npm test` to run the tests
+
+## Contributing
+
+- To contribute to this project:
+- Fork this repository & clone locally.
+- Create an upstream remote and sync your local copy.
+- create a new branch.
+- Push your code to your origin repository.
+- Create a new Pull Request .
+
+
+Author
+
+👤 **Maryjane Akpagbue**
+
+- Github: [Maryjanee](https://github.com/Maryjanee)
+- Twitter: [Maryjane Akpagbue](https://twitter.com/alfredmaryjane)
+- Linkedin: [Maryjane Akpagbue](https://www.linkedin.com/in/maryjane-akpagbue)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+-  [Microverse](https:www.microverse.org)
+-  [Open Game Art](https://opengameart.org/)
