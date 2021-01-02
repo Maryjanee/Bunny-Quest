@@ -4,7 +4,10 @@
   "description": "A Platform Game built with Phaser 3",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --config webpack/prod.js ",
+    "new:dir": "mkdir dist/src",
+    "copy": "cp -r src/assets dist/src",
+    "build": "webpack --config webpack/prod.js && npm run postbuild",
+    "postbuild": "npm run new:dir && npm run copy",
     "start": "webpack-dev-server --config webpack/base.js --open",
     "test": "jest"
   },
