@@ -1,4 +1,4 @@
-export default function createLeaderBoardTable(arr) {
+ const createLeaderBoardTable = (arr) => {
   const results = document.querySelector('.results');
   const table = document.createElement('table');
   const thead = document.createElement('thead');
@@ -26,3 +26,5 @@ export default function createLeaderBoardTable(arr) {
   results.appendChild(table);
   results.appendChild(message);
 }
+
+export default createLeaderBoardTable

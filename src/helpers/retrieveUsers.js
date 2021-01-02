@@ -1,7 +1,7 @@
 import sortTopTenGamers from './sortTopGamers';
 import createLeaderBoardTable from './leaderBoardTable';
 
-export default function retrieveUsers() {
+const retrieveUsers = () => {
   fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iy8gwhVatNBXYEvndkqk/scores/',
   )
@@ -13,3 +13,5 @@ export default function retrieveUsers() {
     })
     .catch((error) => error);
 }
+
+export default retrieveUsers; 

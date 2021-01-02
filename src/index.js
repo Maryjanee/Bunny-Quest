@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import Phaser from 'phaser';
 
 import config from './Config/config';
