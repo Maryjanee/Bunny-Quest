@@ -6,9 +6,9 @@
   "scripts": {
     "new:dir": "mkdir dist/src",
     "copy": "cp -r src/assets dist/src",
-    "build": "webpack --config webpack/prod.js && npm run postbuild",
-    "postbuild": "npm run new:dir && npm run copy",
+    "build": "webpack --config webpack/prod.js ",
     "start": "webpack-dev-server --config webpack/base.js --open",
+    "postbuild": "npm run new:dir && npm run copy",
     "test": "jest"
   },
   "repository": {

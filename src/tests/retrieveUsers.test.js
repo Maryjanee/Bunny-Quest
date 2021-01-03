@@ -4,7 +4,7 @@
 
 // describe('Retrieving Scores from API', ()=>{
 //   it('Creates data in the leaderboard API', async()=>{
-//     const data = await sendDataToApi('wale', 20); 
+//     const data = await sendDataToApi('wale', 20);
 //     expect(data).toBe('Leaderboard score created correctly.')
 //   });
 
