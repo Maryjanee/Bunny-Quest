@@ -11,6 +11,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   init() {
+    
     this.carrotsCollected = 0;
   }
 
@@ -23,6 +24,10 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    const results = document.querySelector('#results');
+    while (results.firstChild) {
+      results.removeChild(results.firstChild);
+    }
     this.add.image(240, 320, 'background').setScrollFactor(1, 0);
     this.platforms = this.physics.add.staticGroup();
     this.cursors = this.input.keyboard.createCursorKeys();
