@@ -1,5 +1,5 @@
 const createLeaderBoardTable = (arr) => {
-  const results = document.querySelector('.results');
+  const results = document.querySelector('#results');
   const table = document.createElement('table');
   table.className = 'results-val';
   const thead = document.createElement('thead');

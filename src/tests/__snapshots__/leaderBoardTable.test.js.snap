@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeaderBoardTable Creation  should create a table element 1`] = `
+<div
+  data-testid="results"
+  id="results"
+>
+  <table
+    class="results-val"
+  >
+    <thead>
+      <tr>
+                 
+                               
+        <th>
+          Rank
+        </th>
+        
+                               
+        <th>
+          Username
+        </th>
+        
+                               
+        <th>
+          Score
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          1
+        </td>
+        
+      
+        <td>
+          Maryjane
+        </td>
+        
+                       
+        <td>
+          30
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          2
+        </td>
+        
+      
+        <td>
+          Daniel
+        </td>
+        
+                       
+        <td>
+          100
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          3
+        </td>
+        
+      
+        <td>
+          Steve
+        </td>
+        
+                       
+        <td>
+          0
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          4
+        </td>
+        
+      
+        <td>
+          Shola
+        </td>
+        
+                       
+        <td>
+          300
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          5
+        </td>
+        
+      
+        <td>
+          Joe
+        </td>
+        
+                       
+        <td>
+          10
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          6
+        </td>
+        
+      
+        <td>
+          jane
+        </td>
+        
+                       
+        <td>
+          30
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          7
+        </td>
+        
+      
+        <td>
+          Mary
+        </td>
+        
+                       
+        <td>
+          50
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          8
+        </td>
+        
+      
+        <td>
+          Dariel
+        </td>
+        
+                       
+        <td>
+          70
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          9
+        </td>
+        
+      
+        <td>
+          Afole
+        </td>
+        
+                       
+        <td>
+          0
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          10
+        </td>
+        
+      
+        <td>
+          Kay
+        </td>
+        
+                       
+        <td>
+          80
+        </td>
+      </tr>
+      <tr
+        class="score-data"
+      >
+        
+      
+        <td>
+          11
+        </td>
+        
+      
+        <td>
+          Bisi
+        </td>
+        
+                       
+        <td>
+          40
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p
+    class="results-val"
+  />
+</div>
+`;
