@@ -8,8 +8,11 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    const results = document.querySelector('#results');
+    while (results.firstChild) {
+      results.removeChild(results.firstChild);
+    }
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
-
 
     this.instructionButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Instructions', 'Instruction');
 

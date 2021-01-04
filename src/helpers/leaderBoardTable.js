@@ -30,7 +30,6 @@ const createLeaderBoardTable = (arr) => {
 
   results.appendChild(table);
   results.appendChild(message);
- 
 };
 
 export default createLeaderBoardTable;

@@ -1,6 +1,7 @@
 /* eslint-disable radix */
 import Phaser from 'phaser';
 
+
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
     super('Preloader');
@@ -8,6 +9,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     // add logo image
+
     this.add.image(400, 200, 'logo');
 
     // display progress bar
@@ -86,6 +88,10 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   create() {
+    const results = document.querySelector('#results');
+    while (results.firstChild) {
+      results.removeChild(results.firstChild);
+    }
     this.scene.start('Title');
   }
 

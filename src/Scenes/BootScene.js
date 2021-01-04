@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 
+
 export default class BootScene extends Phaser.Scene {
   constructor() {
     super('Boot');
@@ -10,6 +11,10 @@ export default class BootScene extends Phaser.Scene {
   }
 
   create() {
+    const results = document.querySelector('#results');
+    while (results.firstChild) {
+      results.removeChild(results.firstChild);
+    }
     this.scene.start('Preloader');
   }
 }

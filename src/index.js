@@ -13,7 +13,6 @@ import LeaderboardScene from './Scenes/LeaderboardScene';
 import Model from './Model';
 import './main.scss';
 
-
 class Game extends Phaser.Game {
   constructor() {
     super(config);
@@ -32,7 +31,3 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game();
-//   }
-//
-//   }
-// })

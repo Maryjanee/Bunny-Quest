@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import sortTopTenGamers from './sortTopGamers';
 import createLeaderBoardTable from './leaderBoardTable';
 
@@ -11,7 +12,6 @@ async function retrieveUsers() {
     const allUsers = json.result;
     const topUsers = sortTopTenGamers(allUsers);
     createLeaderBoardTable(topUsers);
-   
   } catch (e) {
     return e;
   }
