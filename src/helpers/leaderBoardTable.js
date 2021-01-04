@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 const createLeaderBoardTable = (arr) => {
   const results = document.querySelector('#results');
   const table = document.createElement('table');
@@ -29,6 +30,7 @@ const createLeaderBoardTable = (arr) => {
 
   results.appendChild(table);
   results.appendChild(message);
+ 
 };
 
 export default createLeaderBoardTable;

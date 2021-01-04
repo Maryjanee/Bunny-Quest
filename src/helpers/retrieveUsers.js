@@ -11,7 +11,7 @@ async function retrieveUsers() {
     const allUsers = json.result;
     const topUsers = sortTopTenGamers(allUsers);
     createLeaderBoardTable(topUsers);
-    return allUsers;
+   
   } catch (e) {
     return e;
   }
