@@ -11,7 +11,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   init() {
-    
     this.carrotsCollected = 0;
   }
 
